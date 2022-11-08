@@ -1,0 +1,265 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.topbar {
+  background-image: url(./asset/topbar.png);
+  background-size: 100%;
+  background-position:top ;
+  height: 200px;
+  margin: -5px;
+  
+}
+
+a {
+  color: darkolivegreen;
+}
+
+a :visited {
+  color: pink;
+}
+
+
+.topbarLink {
+ padding: 8%;
+}
+
+.buttons {
+  padding: 2px 10px;
+  margin:  20px;
+  color: wheat;
+  background-color: slateblue;
+  box-sizing: 160px;
+  text-shadow: 2px 2px 2px black ;
+  font-weight:bold;
+  font-size: 12px;
+  font-family:serif;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px slategray;
+}
+.clicker {
+  width: 30%;
+  padding: 2px 10px;
+  margin:  20px;
+  background-color: lightskyblue;
+  box-sizing: 160px;
+  text-shadow: 2px 2px 2px grey ;
+  font-style: normal;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px slategray;
+}
+
+.basicForm {
+  display: flex;
+  flex-direction: column;
+  padding:5px;
+  margin: 0px auto;
+font-family:monospace; 
+  align-items: center;  width: 50%;
+  border:0px solid black;
+  border-radius: 10px;
+  box-shadow:3px 2px 10px slategray;
+  background-color: aliceblue;
+}
+
+input {
+  margin: 3px;
+}
+
+.regForm {
+  display: flex;
+  flex-direction: column;
+  padding:5px;
+  margin: 0px auto;
+  font-family:monospace; 
+  align-items: center;  width: 50%;
+  border:0px solid black;
+  border-radius: 10px;
+  box-shadow:3px 2px 10px slategray;
+  background-color: aliceblue;
+}
+
+
+.details {
+  font-size: 10px;
+  color: maroon;
+  font-style: italic;
+  margin: -20px 0px 0px 0px;
+  font-weight: bold;
+}
+
+.formWarning {
+  font-size: 10px;
+  color: maroon;
+  font-style: italic;
+  margin: 10px 0px 0px 0px;
+  font-weight: bold;
+}
+
+
+.mainBody {
+  margin: 5%;
+  padding: 0px 0px 30px 0px;
+  justify-content: center;
+}
+
+.categoryImg {
+  width: 100px;
+}
+
+.basicTable {
+margin: 20px 0px;
+justify-content: center;  
+display: flex;
+
+}
+
+
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.tableRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center ;
+  border: 0px solid;
+  padding: 20px 0px;
+  
+  margin: auto;
+  border-radius: 20px;
+  width: 60%;
+  box-shadow: 2px 2px 10px grey;
+
+  }
+
+  .tableInnerBorder, tr, t {
+    color: steelblue;
+    text-shadow: .3px .3px 2px rgb(171, 171, 171);
+    border: 0px solid ;
+    border-collapse: collapse;
+    box-shadow: 1px 1px 8px lightgray;
+    background-color: whitesmoke;
+
+  }
+
+.testingTable{
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  border: 0px solid;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px grey;
+  padding: 10px;
+  }
+
+  .tableRow td {
+
+    width: 200px;
+    padding: 10px 0px;
+  }
+
+
+  .displayForm {
+    font-size: 12px;
+  }
+
+.warnButton {
+  padding: 2px 10px;
+  margin:  20px;
+  color: black;
+  background-color: crimson;
+  box-sizing: 160px;
+  text-shadow: 1px 1px 2px grey ;
+  
+  font-weight:bold;
+  font-size: 12px;
+  font-family:serif;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px slategray;
+}
+ 
+.goButton {
+  padding: 2px 10px;
+  margin:  20px;
+  color: black;
+  background-color: green;
+  box-sizing: 160px;
+  text-shadow: 1px 1px 2px grey ;
+  
+  font-weight:bold;
+  font-size: 12px;
+  font-family:serif;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px slategray;
+}
+
+
+.split {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.catImage {
+  width: 100px;
+}
+
+.warning {
+  color:red;
+  font-style: italic;
+  font-size: 8px;
+  text-shadow: .5PX .5PX 1PX grey;  
+}
+
+.wcListIcon {
+  width: 80px;
+
+}
