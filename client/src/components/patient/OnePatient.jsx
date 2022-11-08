@@ -5,11 +5,17 @@ import DeletePatientButton from "../DeletePatientButton";
 
 
 const OnePatient = ({user}) => {
-    const [thisPatient, setThisPatient] = useState({});
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [age, setAge] = useState("")
+    const [condition, setCondition] = useState("")
+    const [width, setWidth] = useState("")
+    const [depth, setDepth] = useState("") 
+    const [submitter, setSubmitter] = useState("") 
+    const [assignedWheelchair, setAssignedWheelchair] = useState("")
     const {id} = useParams();
     const navigate = useNavigate();
     const [list, setList] = useState([])
-    const [assignedWheelchair, setAssignedWheelchair] = useState("")
 
 
     
@@ -17,7 +23,14 @@ const OnePatient = ({user}) => {
         axios.get(`http://localhost:8000/api/patient/${id}` ,{withCredentials:true,credentials:'include'})
         .then((res) => {
             console.log("this is", res.data);
-            setThisPatient(res.data);
+            setFirstName(res.data.firstName)
+            setLastName(res.data.lastName)
+            setAge(res.data.age)
+            setCondition(res.data.condition)
+            setWidth(res.data.width)
+            setDepth(res.data.depth)
+            setAssignedWheelchair(res.data.assignedWheelchair)
+            setSubmitter(res.data.submitter)
         }).catch(err=> console.log(err))
     } , [])
 
@@ -32,13 +45,15 @@ const OnePatient = ({user}) => {
     console.log("helllooooooo", assignedWheelchair)
     e.preventDefault()
     axios.put(`http://localhost:8000/api/updatePatient/${id}`, {
-      assignedWheelchair
+      firstName,lastName,age,condition,width,depth,submitter,assignedWheelchair
     }, {withCredentials:true,credentials:'include'})
   .then(res => {
     console.log(res.data)
     navigate("/allPatients")
   }).catch(err=> {
+    console.log( )
     console.log(err)
+    
   })
   }
 
@@ -46,13 +61,13 @@ const OnePatient = ({user}) => {
     <div className="mainBody">
       <div className="displayForm">
         <Link className="buttons" to="/allPatients">All Patients</Link>
-        <h2>{thisPatient.firstName} {thisPatient.lastName}</h2>
-        <h3>Age: {thisPatient.age}</h3>
-        <h4>Condition: {thisPatient.condition}</h4>
-        <p>Width: {thisPatient.width}</p>
-        <p>Depth: {thisPatient.depth}</p>
-        <p>Submitter: {thisPatient.submitter}</p>
-        <p>Wheelchair Assigned: {thisPatient.assignedWheelchair}</p>
+        <h2>{firstName} {lastName}</h2>
+        <h3>Age: {age}</h3>
+        <h4>Condition: {condition}</h4>
+        <p>Width: {width}</p>
+        <p>Depth: {depth}</p>
+        <p>Submitter: {submitter}</p>
+        <p>Wheelchair Assigned: {assignedWheelchair}</p>
 
 
         { (user.admin) ?
@@ -62,10 +77,10 @@ const OnePatient = ({user}) => {
         <select>
           {list.map((wheelchair,index) => { 
             // eslint-disable-next-line no-lone-blocks
-            { if (wheelchair.width === thisPatient.width && wheelchair.depth === thisPatient.depth && user.admin)        
+            { if (wheelchair.width === width && wheelchair.depth === depth && user.admin)        
           return (
             <>
-          <option key={index} onChange={ (e)=>setAssignedWheelchair(e.target.value)} value={wheelchair.color}>{wheelchair.color}</option>
+          <option key={index} onChange={ (e)=>setAssignedWheelchair(e.target.value)} name="assignedWheelchair" value={wheelchair._id}>{wheelchair.color}</option>
           </>
           )
         }
@@ -78,11 +93,11 @@ const OnePatient = ({user}) => {
         :
         
         <>        
-        <p>Wheelchair Assigned:  {thisPatient.assignedWheelchair}</p>
+        <p>Wheelchair Assigned:  {assignedWheelchair}</p>
         </>
     }
-        <Link className="buttons" to={`/editPatient/${thisPatient._id}`}>Edit Patient</Link>
-        <DeletePatientButton className="warnButton" patientId={thisPatient._id} />
+        <Link className="buttons" to={`/editPatient/${id}`}>Edit Patient</Link>
+        <DeletePatientButton className="warnButton" patientId={id} />
         </div>
     </div>
   )

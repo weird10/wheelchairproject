@@ -56,6 +56,7 @@ const Dashboard = ({user}) => {
                         <img className="categoryImg" src={people} alt='wheelchair'></img>
                         {/* (wip,"Patients awaiting wheelchairs") */}
                         <Link className="buttons" to="/allPatients">All Patients </Link>
+                        <Link className="buttons" to="/allPatients">Patients assigned wheelchair. </Link>
                         <img className="categoryImg" src={people} alt='wheelchair'></img>
                         <Link className="buttons" to="/allPatients">Patients Assigned Wheelchairs (**wip)</Link>
                       </td>
@@ -70,20 +71,6 @@ const Dashboard = ({user}) => {
                 </div>
               </div>
               } 
-          {/* </div> 
-    <div>      
-    ${user.admin === "true "
-        ? <div>
-              <h1>Hi</h1>
-              <a href="/addWheelchair">Add Wheelchair</a>
-              <a href="/allWheelchairs">All Wheelchair</a>
-              <a href="/allPatients">All Patients</a>
-          </div> 
-        : <div>
-              <a href="/addPatient">Add Patient</a>
-              <a href="/allPatients">View enrolled Patients</a>
-          </div>    
-      }    */}
     </div>    
         
     )

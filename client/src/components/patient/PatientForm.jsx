@@ -13,6 +13,7 @@ const PatientForm= ({user,setUser}) => {
     const [width, setWidth] = useState("")
     const [depth, setDepth] = useState("") 
     const [submitter, setSubmitter] = useState("")
+    const [assignedWheelchair, setAssignedWheelchair] = useState('')
     const [errors, setErrors] = useState("")
 
     const navigate = useNavigate();
@@ -26,7 +27,8 @@ const PatientForm= ({user,setUser}) => {
             condition,
             width,
             depth,
-            submitter: user.firstName + ' ' + user.lastName
+            submitter: user.firstName + ' ' + user.lastName,
+            assignedWheelchair
     }, {withCredentials:true, credentials:"include"})
     .then(res => {
         console.log(res)
